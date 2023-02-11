@@ -7,11 +7,11 @@ export default function Usuario(props){
     
     return(
         <div class="usuario">
-                <img src={imagemPerfil} alt="imagem de perfil" />
+                <img data-test="profile-image" src={imagemPerfil} alt="imagem de perfil" />
                 <div class="texto">
                     <span>
-                        <strong>{nomeUsuario}</strong>
-                        <ion-icon name="pencil"></ion-icon>
+                        <span data-test="name"><strong>{nomeUsuario}</strong></span>
+                        <ion-icon  data-test="edit-name" name="pencil"></ion-icon>
                     </span>
                 </div>
             </div>

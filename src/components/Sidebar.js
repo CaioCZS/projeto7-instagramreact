@@ -1,91 +1,15 @@
+import RodapeSide from "./RodapeSide";
+import Sugestoes from "./Sugestoes";
+import Usuario from "./Usuario";
+
 export default function Sidebar() {
+    const arrayUsuario = [{ nome: "Anônimo", imagem: "data:image/jpeg;base64,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" }]
+
     return (
         <div class="sidebar">
-            <div class="usuario">
-                <img src="assets/img/catanacomics.svg" alt="imagem de perfil" />
-                <div class="texto">
-                    <span>
-                        <strong>catanacomics</strong>
-                        <ion-icon name="pencil"></ion-icon>
-                    </span>
-                </div>
-            </div>
-
-            <div class="sugestoes">
-                <div class="titulo">
-                    Sugestões para você
-                    <div>Ver tudo</div>
-                </div>
-
-                <div class="sugestao">
-                    <div class="usuario">
-                        <img src="assets/img/bad.vibes.memes.svg" alt="bad.vibes.memes.svg" />
-                        <div class="texto">
-                            <div class="nome">bad.vibes.memes</div>
-                            <div class="razao">Segue você</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                </div>
-
-                <div class="sugestao">
-                    <div class="usuario">
-                        <img src="assets/img/chibirdart.svg" alt="chibirdart" />
-                        <div class="texto">
-                            <div class="nome">chibirdart</div>
-                            <div class="razao">Segue você</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                </div>
-
-                <div class="sugestao">
-                    <div class="usuario">
-                        <img src="assets/img/razoesparaacreditar.svg" alt="razoesparaacreditar" />
-                        <div class="texto">
-                            <div class="nome">razoesparaacreditar</div>
-                            <div class="razao">Novo no Instagram</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                </div>
-
-                <div class="sugestao">
-                    <div class="usuario">
-                        <img src="assets/img/adorable_animals.svg" alt="adorable_animals" />
-                        <div class="texto">
-                            <div class="nome">adorable_animals</div>
-                            <div class="razao">Segue você</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                </div>
-
-                <div class="sugestao">
-                    <div class="usuario">
-                        <img src="assets/img/smallcutecats.svg" alt="smallcutecats" />
-                        <div class="texto">
-                            <div class="nome">smallcutecats</div>
-                            <div class="razao">Segue você</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                </div>
-            </div>
-
-            <div class="links">
-                Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes •
-                Hashtags • Idioma
-            </div>
-
-            <div class="copyright">
-                © 2021 INSTAGRAM DO FACEBOOK
-            </div>
+            {arrayUsuario.map((u) => <Usuario nome={u.nome} imagem={u.imagem} />)}
+            <Sugestoes />
+            <RodapeSide />
         </div>
     )
 }

@@ -7,6 +7,7 @@ export default function Post(props) {
     const [tipoIconCutida, setTipoIconCurtida] = useState("-outline")
     const [classeSalvar, setClasseSalvar] = useState("")
     const [tipoIconSalvar, setTipoIconSalvar] = useState("-outline")
+    const [animacao , setAnimacao]= useState("")
     
     const mudarCurtida = () =>{
         let nvCurtidas= numeroCurtidas*1000
@@ -18,6 +19,7 @@ export default function Post(props) {
             setClasseCurtida("")
             setTipoIconCurtida("-outline")
             setNumeroCurtidas(((nvCurtidas-1)/1000).toFixed(3))
+            setAnimacao("")
         }
     }
     
@@ -37,6 +39,7 @@ export default function Post(props) {
         setClasseCurtida("vermelho")
         setTipoIconCurtida("")
         setNumeroCurtidas(((nvCurtidas+1)/1000).toFixed(3))
+        setAnimacao("aparecer")
         }
     }
 
@@ -45,6 +48,7 @@ export default function Post(props) {
             <TopoPost nome={props.nome} />
             <div class="conteudo">
                 <img data-test="post-image" onDoubleClick={() => curtirPostImg()} src={props.imagem} alt={props.imagem} />
+                <span class={`iconCurtida ${animacao}`}><ion-icon data-test="like-post" name="heart"></ion-icon></span>
             </div>
 
             <div class="fundo">

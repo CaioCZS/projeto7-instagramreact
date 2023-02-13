@@ -179,6 +179,9 @@ body {
 .post .conteudo img {
   width: 100%;
 }
+.conteudo{
+  position:relative;
+}
 
 .post .fundo .acoes {
   display: flex;
@@ -310,4 +313,35 @@ ion-icon {
 
 .vermelho{
   color:rgba(223, 13, 13, 0.877);
+}
+
+.cinza{
+  color:rgba(94, 92, 92, 0.651)
+}
+
+@keyframes animacao{
+  0%{
+    font-size: 130px;
+    transform: scale(0.2)
+  }
+  96%{
+    font-size: 130px;
+    transform: scale(1)
+  }
+  100%{
+    font-size: 130px; 
+    transform: scale(0)
+  }
+}
+
+.iconCurtida{
+  position: absolute;
+  top:235px;
+  right: 235px;
+  color:white;
+  font-size: 0;
+}
+.aparecer{
+  animation-name:animacao;
+  animation-duration: 0.4s;
 }

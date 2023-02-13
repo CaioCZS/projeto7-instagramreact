@@ -44,15 +44,15 @@ export default function Post(props) {
     }
 
     return (
-        <div data-test="post" class="post">
+        <div data-test="post" className="post">
             <TopoPost nome={props.nome} />
-            <div class="conteudo">
+            <div className="conteudo">
                 <img data-test="post-image" onDoubleClick={() => curtirPostImg()} src={props.imagem} alt={props.imagem} />
-                <span class={`iconCurtida ${animacao}`}><ion-icon data-test="like-post" name="heart"></ion-icon></span>
+                <span className={`iconCurtida ${animacao}`}><ion-icon data-test="like-post" name="heart"></ion-icon></span>
             </div>
 
-            <div class="fundo">
-                <div class="acoes">
+            <div className="fundo">
+                <div className="acoes">
                     <div>
                         <span className={classeCurtida} ><ion-icon data-test="like-post" onClick={mudarCurtida} name={`heart${tipoIconCutida}`}></ion-icon></span>
                         <ion-icon name="chatbubble-outline"></ion-icon>
@@ -63,9 +63,9 @@ export default function Post(props) {
                     </div>
                 </div>
 
-                <div class="curtidas">
+                <div className="curtidas">
                     <img src={`assets/img/${props.curtidoPor}.svg`} alt={props.curtidoPor} />
-                    <div class="texto">
+                    <div className="texto">
                         Curtido por <strong>{props.curtidoPor}</strong> e <strong>outras <span data-test="likes-number">{numeroCurtidas}</span> pessoas</strong>
                     </div>
                 </div>

@@ -14,9 +14,9 @@ export default function Stories() {
 
 
     return (
-        <div class="stories">
-            {nomes.map((n) => <Story nome={n} />)}
-            <div class="setinha">
+        <div className="stories">
+            {nomes.map((n) => <Story nome={n} key={n}/>)}
+            <div className="setinha">
                 <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
         </div>

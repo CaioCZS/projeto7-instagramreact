@@ -9,9 +9,9 @@ export default function Posts() {
     ]
 
     return (
-        <div class="posts">
+        <div className="posts">
             {arrayPosts.map((p) =>
-                <Post nome={p.nome} imagem={p.imagem} curtidas={p.curtidas} curtidoPor={p.curtidoPor} />)
+                <Post key={p.nome} nome={p.nome} imagem={p.imagem} curtidas={p.curtidas} curtidoPor={p.curtidoPor} />)
             }
         </div>
     )

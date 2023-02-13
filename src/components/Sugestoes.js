@@ -10,12 +10,12 @@ export default function Sugestoes(){
     ]
     
     return (
-        <div class="sugestoes">
-        <div class="titulo">
+        <div className="sugestoes">
+        <div className="titulo">
             Sugestões para você
             <div>Ver tudo</div>
         </div>
-       {arraySugestoes.map((s) => <Sugestao nome={s.nome} razao={s.razao} />)}
+       {arraySugestoes.map((s) => <Sugestao key={s.nome} nome={s.nome} razao={s.razao} />)}
     </div>
     )
 }

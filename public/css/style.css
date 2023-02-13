@@ -304,4 +304,10 @@ ion-icon {
   padding-top: 5px;
   color: black;
 }
+.amarelo{
+  color:rgba(233, 211, 10, 0.884);
+}
 
+.vermelho{
+  color:rgba(223, 13, 13, 0.877);
+}
